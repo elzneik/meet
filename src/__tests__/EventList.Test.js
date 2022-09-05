@@ -6,7 +6,7 @@ import Event from '../Event';
 
 describe('<EventList /> component', () => {
   test('render correct number of events', () => {
-    const EventListWrapper = shallow(<EventList events={[{}, {}, {}, {}]} />);
+    const EventListWrapper = shallow(<EventList events={[{ 1 }, { 2 }, { 3 }, { 4 }]} />);
     expect(EventListWrapper.find(Event)).toHaveLength(4);
   });
 });

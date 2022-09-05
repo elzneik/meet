@@ -1,4 +1,4 @@
-/*
+
 import React, { Component } from 'react';
 
 class CitySearch extends Component {
@@ -17,4 +17,3 @@ class CitySearch extends Component {
 }
 
 export default CitySearch;
-*/

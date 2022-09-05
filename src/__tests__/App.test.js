@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from '../App';
-// import EventList from '../EventList';
+import EventList from '../EventList';
 // import CitySearch from '../CitySearch';
 
 // Describe function; new group "scope" '<App /> component'

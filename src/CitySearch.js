@@ -5,7 +5,7 @@ class CitySearch extends Component {
 
   state = {
     query: '',
-    suggestion:[]
+    suggestion:[],
   }
 
   handleInputChanged = (event) => {
@@ -22,14 +22,14 @@ class CitySearch extends Component {
           value={this.state.query}
           onChange={this.handleInputChanged}
           />
-          <ul className="suggestions">
+         <ul className="suggestions">
           {this.state.suggestions.map((suggestion) => (
-              <li key={suggestion}>{suggestion}</li>
-            ))}
-            <li key='all'>
-              <b>See all cities</b>
-            </li>
-          </ul>
+            <li key={suggestion}>{suggestion}</li>
+          ))}
+          <li key='all'>
+            <b>See all cities</b>
+          </li>
+</ul>
       </div>
     );
   }

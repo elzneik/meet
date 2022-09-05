@@ -5,10 +5,10 @@ import { mockData } from '../mock-data';
 import { extractLocations } from '../api';
 
 describe('<CitySearch /> component', () => {
-  let CitySearchWrapper;
+  let CitySearchWrapper, locations;
     beforeAll(() => {
       locations = extractLocations(mockData);
-      CitySearchWrapper = shallow(<CitySearch />);
+      CitySearchWrapper = shallow(<CitySearch locations={locations} />);
     });
 
 

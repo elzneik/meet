@@ -1,4 +1,3 @@
-/*
 import React from 'react';
 import { shallow } from 'enzyme';
 import CitySearch from '../CitySearch';
@@ -8,7 +7,9 @@ describe('<CitySearch /> component', () => {
     const CitySearchWrapper = shallow(<CitySearch />);
     expect(CitySearchWrapper.find('.city')).toHaveLength(1);
   });
+});
 
+/*
     test('renders a list of suggestions', () => {
         const CitySearchWrapper = shallow(<CitySearch />);
         expect(CitySearchWrapper.find('.suggestions')).toHaveLength(1);
@@ -20,5 +21,5 @@ describe('<CitySearch /> component', () => {
       expect(CitySearchWrapper.find('.city').prop('value')).toBe(query);
     });
 
-});
+
 */

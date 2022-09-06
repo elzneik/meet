@@ -23,6 +23,8 @@ class CitySearch extends Component {
     this.setState({
       query: suggestion
     });
+
+    this.props.updateEvents(suggestion);
   }
 
   render() {

@@ -1,9 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+
 import { mockData } from '../mock-data';
+
 import CitySearch from '../CitySearch';
 import { extractLocations } from '../api';
 
+// Unit tests
 describe('<CitySearch /> component', () => {
   let CitySearchWrapper, locations;
     beforeAll(() => {

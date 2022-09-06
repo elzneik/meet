@@ -1,18 +1,20 @@
 
 import React from "React";
 import { shallow } from "Enzyme";
-import { mockData} from "../mock-data"
+
+import { mockData} from "../mock-data";
+
 import Event from "../Event";
 
-describe("<Event /> component", () => {
-    let = event;
-    let = EventWrapper;
+describe('<Event /> component', () => {
+    let event;
+    let EventWrapper;
     beforeAll(() => {
         event = mockData[0];
         EventWrapper = shallow(<Event Event={event} />);
     });
 
-    Test ("render title in event item", () => {
+    test ("render title in event item", () => {
         expect(EventWrapper.find(".event-info")).toHaveLength(1);
     });
 

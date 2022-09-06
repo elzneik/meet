@@ -1,10 +1,13 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+
 import { mockData } from '../mock-data';
 import { extractLocations, getEvents } from '../api';
+
 import App from '../App';
 import EventList from '../EventList';
 import CitySearch from '../CitySearch';
+import NumberOfEvents from '../NumberOfEvents';
 
 // Unit Testing
 describe('<App /> component', () => {
@@ -18,8 +21,12 @@ describe('<App /> component', () => {
       });
 
     test('render CitySearch', () => {
-        expect(AppWrapper.find(CitySearch)).toHaveLength(1);
-        });
+      expect(AppWrapper.find(CitySearch)).toHaveLength(1);
+      });
+
+    test('render NumberOfEvents', () => {
+      expect(AppWrapper.find(NumberOfEvents)).toHaveLength(1);
+      });
 });
 
 
@@ -55,6 +62,7 @@ describe('<App /> integration', () => {
     expect(AppWrapper.state('events')).toEqual(eventsToShow);
     AppWrapper.unmount();
   });
+
   test('get list of all events when user selects "See all cities"', async () => {
     const AppWrapper = mount(<App />);
     const suggestionItems = AppWrapper.find(CitySearch).find('.suggestions li');
@@ -63,5 +71,24 @@ describe('<App /> integration', () => {
     expect(AppWrapper.state('events')).toEqual(allEvents);
     AppWrapper.unmount();
   });
+
+  test('App passes "numberOfEvents" state as a prop to NumberOfEvents', () => {
+    const AppWrapper = mount(<App />);
+    const AppNumberState = AppWrapper.state('numberOfEvents');
+    expect(AppNumberState).not.toEqual(undefined);
+    expect(AppWrapper.find(NumberOfEvents).props().numberOfEvents).toEqual(AppNumberState);
+    AppWrapper.unmount();
+  });
+
+test('get list of events matching the number of events inputted by the user', async () => {
+    const AppWrapper = mount(<App />);
+    const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
+    const number = Math.floor(Math.random() * (32));
+    const eventObject = { target: { value: number } };
+    await NumberOfEventsWrapper.find('.render-number').simulate('change', eventObject);
+    expect(AppWrapper.state('numberOfEvents')).toEqual(number);
+    AppWrapper.unmount();
+  });
+
 });
 

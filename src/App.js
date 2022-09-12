@@ -1,8 +1,11 @@
 import './nprogress.css';
 import React, { Component } from 'react';
 import './App.css';
+
 import EventList from './EventList';
 import CitySearch from './CitySearch';
+import NumberOfEvents from './NumberOfEvents';
+
 import { getEvents, extractLocations } from "./api";
 
 
@@ -11,7 +14,8 @@ class App extends Component {
 
   state = {
     events: [],
-    locations: []
+    locations: [],
+    NumberOfEvents: 32
   }
 
   updateEvents = (location) => {
@@ -43,6 +47,7 @@ class App extends Component {
       <div className="App">
         <CitySearch locations={this.state.locations}/>
         <EventList events={this.state.events}/>
+        <NumberOfEvents updateEvents={this.state.updateEvents}/>
       </div>
     );
   }

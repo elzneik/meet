@@ -1,5 +1,5 @@
-// import puppeteer from 'puppeteer';
-/*
+import puppeteer from 'puppeteer';
+
 describe ("hide/show an event details", () => {
     let browser
     let page
@@ -37,6 +37,4 @@ describe ("hide/show an event details", () => {
         const eventDetails = await page.$('.event .event__Details');
         expect(eventDetails).toBeNull();
       });
-
 });
-*/

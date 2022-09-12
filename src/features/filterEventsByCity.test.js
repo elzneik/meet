@@ -1,4 +1,3 @@
-/*
 import React from 'react';
 import App from '../App';
 import { mockData } from '../mock-data';
@@ -63,5 +62,3 @@ defineFeature(feature, test => {
             expect(AppWrapper.find('.event')).toHaveLength(mockData.length);
           });
         });
-
-*/

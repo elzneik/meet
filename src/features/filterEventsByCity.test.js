@@ -37,11 +37,11 @@ defineFeature(feature, test => {
     });
   
     test('User can select a city from the suggested list', ({ given, and, when, then }) => {
-        let AppWrapper;
-        given('user was typing “Berlin” in the city textbox', async () => {
-            AppWrapper = await mount(<App />);
-            AppWrapper.find('.city').simulate('change', { target: { value: 'Berlin' } });
-          });
+      let AppWrapper;
+      given('user was typing “Berlin” in the city textbox', async () => {
+          AppWrapper = await mount(<App />);
+          AppWrapper.find('.city').simulate('change', { target: { value: 'Berlin' } });
+        });
   
       and('the list of suggested cities is showing', () => {
         AppWrapper.update();
@@ -61,3 +61,4 @@ defineFeature(feature, test => {
         expect(AppWrapper.find('.event')).toHaveLength(mockData.length);
       });
     });
+  }); 

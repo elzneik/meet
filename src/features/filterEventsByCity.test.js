@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import App from '../App';
 import { mockData } from '../mock-data';
@@ -62,3 +63,4 @@ defineFeature(feature, test => {
       });
     });
   }); 
+  */

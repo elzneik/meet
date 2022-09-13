@@ -1,7 +1,5 @@
-
-
-
 const mockData = [
+        /* Event 1 */
          {
           "kind": "calendar#event",
           "etag": "\"3181161784712000\"",
@@ -41,6 +39,7 @@ const mockData = [
           },
           "eventType": "default"
          },
+         /* Event 2 */
          {
           "kind": "calendar#event",
           "etag": "\"3181159875584000\"",
@@ -80,6 +79,7 @@ const mockData = [
           },
           "eventType": "default"
          },
+         /* Event 3 */
          {
           "kind": "calendar#event",
           "etag": "\"3181161784712000\"",
@@ -119,6 +119,7 @@ const mockData = [
           },
           "eventType": "default"
          },
+         /* Event 4 */
          {
           "kind": "calendar#event",
           "etag": "\"3181159875584000\"",
@@ -158,6 +159,7 @@ const mockData = [
           },
           "eventType": "default"
          },
+         /* Event 5 */
          {
           "kind": "calendar#event",
           "etag": "\"3181161784712000\"",
@@ -197,6 +199,7 @@ const mockData = [
           },
           "eventType": "default"
          },
+         /* Event 6 */
          {
           "kind": "calendar#event",
           "etag": "\"3181159875584000\"",
@@ -236,6 +239,7 @@ const mockData = [
           },
           "eventType": "default"
          },
+         /* Event 7 */
          {
           "kind": "calendar#event",
           "etag": "\"3181161784712000\"",
@@ -275,6 +279,7 @@ const mockData = [
           },
           "eventType": "default"
          },
+         /* Event 8 */
          {
           "kind": "calendar#event",
           "etag": "\"3181159875584000\"",
@@ -314,6 +319,7 @@ const mockData = [
           },
           "eventType": "default"
          },
+         /* Event 9 */
          {
           "kind": "calendar#event",
           "etag": "\"3181161784712000\"",
@@ -353,6 +359,7 @@ const mockData = [
           },
           "eventType": "default"
          },
+         /* Event 10 */
          {
           "kind": "calendar#event",
           "etag": "\"3181159875584000\"",
@@ -391,7 +398,21 @@ const mockData = [
            "useDefault": true
           },
           "eventType": "default"
-         },
+         }
+        ];
+
+
+
+        export { mockData };
+
+/*
+
+
+
+
+
+
+
          {
           "kind": "calendar#event",
           "etag": "\"3181161784712000\"",
@@ -15062,8 +15083,4 @@ const mockData = [
           },
           "eventType": "default"
          }
-];
-
-
-
-export { mockData };
+*/

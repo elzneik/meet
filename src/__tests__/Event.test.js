@@ -23,7 +23,7 @@ describe('<Event /> component', () => {
     });
 
     test('render show more button in event item', () => {
-        expect(EventWrapper.find('.details-button')).toHaveLength(1);
+        expect(EventWrapper.find('.details-btn')).toHaveLength(1);
     });
 
     test('event title renders correctly', () => {
@@ -53,7 +53,7 @@ describe('<Event /> component', () => {
         EventWrapper.setState({
             show: false
         });
-        EventWrapper.find('.details-button').simulate('click');
+        EventWrapper.find('.details-btn').simulate('click');
         expect(EventWrapper.state('show')).toEqual(true);
     });
 

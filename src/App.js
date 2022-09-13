@@ -60,6 +60,10 @@ class App extends Component {
     let { locations, numberOfEvents, events } = this.state;
     return (
       <div className="App">
+
+        <h1 className="headline"> Welcome to the Meet App </h1>
+        <h3 className="subtitle"> Search for your city and see upcoming events </h3>
+
         <CitySearch updateEvents={this.updateEvents} locations={locations} />
         <NumberOfEvents numberOfEvents={numberOfEvents} updateEvents={this.updateEvents} />
         <EventList events={this.state.events}/>

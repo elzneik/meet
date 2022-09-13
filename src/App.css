@@ -1,11 +1,21 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 .App {
-  text-align: center;
+  text-align: right;
   padding: 2% 5%;
 }
 
 .App * {
   box-sizing: border-box;
+}
+
+.headline {
+  text-align: center;
+  color: #3399ff;
+}
+
+.subtitle {
+text-align: center;
+color: #80bfff;
 }
 
 ul {
@@ -44,7 +54,7 @@ input[type="number"] {
   display: flex;
   flex-direction: column;
   flex-basis: 300px;
-  max-width: 300px;
+  max-width: 600px;
   margin: auto;
   position: relative;
 }

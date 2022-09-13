@@ -4,7 +4,7 @@ import puppeteer from 'puppeteer';
 describe('show/hide an event details', () => {
 
   beforeAll(async () => {
-    jest.setTimeout(30000);
+    jest.setTimeout(60000);
   });
 
   test('An event element is collapsed by default', async () => {

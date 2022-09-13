@@ -34,7 +34,7 @@ class Event extends Component {
                   <div className="event-info_date">{this.getDate(event.start.dateTime, event.start.timeZone)}</div>
               </div>
               {show && <div className="event-details">{event.description}</div>}
-              <button className="details-button" onClick={this.toggleDetails}>{buttonText}</button>
+              <button className="details-btn" onClick={this.toggleDetails}>{buttonText}</button>
           </div>
       );
   }

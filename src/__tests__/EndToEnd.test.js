@@ -1,16 +1,38 @@
 import puppeteer from 'puppeteer';
 
-test('An event element is collapsed by default', async () => {
-  const browser = await puppeteer.launch();
+// Define a scope (describe); Define tests; Use beforeAll to call functions used in all tests
+describe('show/hide an event details', () => {
 
-  const page = await browser.newPage();
-  await page.goto('http://localhost:3000/');
+  beforeAll(async () => {
+    jest.setTimeout(30000);
+  });
 
-  await page.waitForSelector('.event');
+  test('An event element is collapsed by default', async () => {
+    const browser = await puppeteer.launch();
 
-  const eventDetails = await page.$('.event .event__Details');
-  expect(eventDetails).toBeNull();
-  browser.close();
+    const page = await browser.newPage();
+    await page.goto('http://localhost:3000/');
+
+    await page.waitForSelector('.event');
+
+    const eventDetails = await page.$('.event .event__Details');
+    expect(eventDetails).toBeNull();
+    browser.close();
+  });
+
+  test('User can expand an event to see its details', async () => {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    await page.goto('http://localhost:3000/');
+
+    await page.waitForSelector('.event');
+    await page.click('.event .details-btn');
+
+    const eventDetails = await page.$('.event .event__Details');
+    expect(eventDetails).toBeDefined();
+    browser.close();
+  });
+
 });
 
 /*

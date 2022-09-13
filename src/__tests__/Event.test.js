@@ -61,7 +61,7 @@ describe('<Event /> component', () => {
         EventWrapper.setState({
             show: true
         });
-        EventWrapper.find('.details-button').simulate('click');
+        EventWrapper.find('.details-btn').simulate('click');
         expect(EventWrapper.state('show')).toEqual(false);
     });
 });

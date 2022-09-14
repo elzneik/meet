@@ -3,7 +3,7 @@ import App from '../App';
 import { mockData } from '../mock-data';
 import { mount, shallow } from 'enzyme';
 import CitySearch from '../CitySearch';
-import { extractLocations, locations } from '../api';
+import { extractLocations } from '../api';
 import { loadFeature, defineFeature } from 'jest-cucumber'; // build in functions
 
 const feature = loadFeature('./src/features/filterEventsByCity.feature');
@@ -26,7 +26,7 @@ defineFeature(feature, test => {
     test('User should see a list of suggestions when they search for a city', ({ given, when, then }) => {
         let CitySearchWrapper;
         given('the main page is open', () => {
-          CitySearchWrapper = shallow(<CitySearch updateEvents={() => {}} locations={locations} />);            
+          CitySearchWrapper = shallow(<CitySearch updateEvents={() => {}} locations={extractLocations(mockData)} />);            
         });  
         when('the user starts typing in the city textbox', () => {
             CitySearchWrapper.find('.city').simulate('change', { target: { value: 'Berlin' } });

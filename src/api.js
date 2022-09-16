@@ -83,6 +83,33 @@ export const getEvents = async () => {
       }
     };
 
+
+/*
+* This function takes your code and encodes it using encodeURIComponent,
+* then uses the encoded code to get your token.
+*/
+const getToken = async (code) => {
+  const encodeCode = encodeURIComponent(code);
+  const { access_token } = await fetch(
+    'https://eajmc0egmg.execute-api.eu-central-1.amazonaws.com/dev/api/token' +
+     '/' + encodeCode
+  )
+    .then((res) => {
+      return res.json();
+    })
+    .catch((error) => error);
+
+  access_token && localStorage.setItem("access_token", access_token);
+
+  return access_token;
+};
+
+
+
+
+/*
+* Try...catch function
+
     const getToken = async (code) => {
       try {
           const encodeCode = encodeURIComponent(code);
@@ -99,6 +126,8 @@ export const getEvents = async () => {
           error.json();
       }
   };
+*/
+
 
   export const extractLocations = (events) => {
     var extractLocations = events.map((event) => event.location);

@@ -90,6 +90,9 @@ module.exports.getAuthURL = async () => {
         .then((token) => {
           // Respond with OAuth token 
           return {
+            headers: {
+              "Access-Control-Allow-Origin": "*"
+            },
             statusCode: 200,
             body: JSON.stringify(token),
           };

@@ -22,7 +22,7 @@ class NumberOfEvents extends Component {
             infoText: " ",
         });
     }
-};
+}
 
 render () {
   return (

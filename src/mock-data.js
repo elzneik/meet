@@ -398,21 +398,7 @@ const mockData = [
            "useDefault": true
           },
           "eventType": "default"
-         }
-        ];
-
-
-
-        export { mockData };
-
-/*
-
-
-
-
-
-
-
+         },
          {
           "kind": "calendar#event",
           "etag": "\"3181161784712000\"",
@@ -15083,4 +15069,10 @@ const mockData = [
           },
           "eventType": "default"
          }
-*/
+
+
+];
+
+
+
+export { mockData };

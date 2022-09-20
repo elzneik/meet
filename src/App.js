@@ -5,12 +5,10 @@ import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
-import EventGenre from "/.EventGenre";
+import EventGenre from "./EventGenre";
 
 import { getEvents, extractLocations } from "./api";
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-
-
 
 class App extends Component {
 

@@ -6,8 +6,9 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import EventGenre from "./EventGenre";
+import WelcomeScreen from './WelcomeScreen';
 
-import { getEvents, extractLocations } from "./api";
+import { getEvents, extractLocations, checkToken, getAccessToken } from "./api";
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 class App extends Component {
@@ -16,7 +17,9 @@ class App extends Component {
     events: [],
     locations: [],
     numberOfEvents: 32,
-    locationSelected: "all"
+    locationSelected: "all",
+    showWelcomeScreen: undefined
+
   }
 
   getData = () => {
@@ -50,6 +53,24 @@ class App extends Component {
     });
   }
 
+  async componentDidMount() {
+    this.mounted = true;
+      const accessToken = localStorage.getItem('access_token');
+      const isTokenValid = (await checkToken(accessToken)).error ? false :
+      true;
+      const searchParams = new URLSearchParams(window.location.search);
+      const code = searchParams.get("code");
+      this.setState({ showWelcomeScreen: !(code || isTokenValid) });
+      if ((code || isTokenValid) && this.mounted) {
+        getEvents().then((events) => {
+          if (this.mounted) {
+            this.setState({ events, locations: extractLocations(events) });
+      }
+    });
+  }
+}
+
+/*
   componentDidMount() {
     this.mounted = true;
     getEvents().then((events) => {
@@ -61,12 +82,16 @@ class App extends Component {
       }
     });
   }
+*/
 
   componentWillUnmount(){
     this.mounted = false;
   }
 
   render() {
+    if (this.state.showWelcomeScreen === undefined) return <div
+      className="App" />
+
     let { locations, numberOfEvents, events } = this.state;
     return (
       <div className="App">
@@ -102,6 +127,9 @@ class App extends Component {
         </div>
         <EventList 
           events={this.state.events}/>
+      
+        <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
+          getAccessToken={() => { getAccessToken() }} />
       </div>
     );
   }

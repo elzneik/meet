@@ -12,20 +12,6 @@ class Alert extends Component {
             color: this.color,
         };
     }
-/*
-    getClass = () => {
-        return this.class;
-    }
-
-    render() {
-        return (
-            <div className={`alert ${this.getClass()}`}>
-                <p style={this.getStyle()}>{this.props.text}</p>
-            </div>
-        );
-    }
-}
-*/
 
 render() {
     return (
@@ -35,7 +21,6 @@ render() {
     );
 }
 }
-
 
 class InfoAlert extends Alert {
     constructor(props) {
@@ -52,7 +37,6 @@ class ErrorAlert extends Alert {
     }
 }
 
-/*
 class WarningAlert extends Alert {
     constructor(props) {
         super(props);
@@ -61,8 +45,6 @@ class WarningAlert extends Alert {
     }
 }
 
-
-
 class OfflineAlert extends Alert {
     constructor(props) {
         super(props);
@@ -70,6 +52,5 @@ class OfflineAlert extends Alert {
         this.class = 'offline-alert';
     }
 }
-*/
-export { InfoAlert, ErrorAlert };
-// WarningAlert, ErrorAlert, OfflineAlert };
+
+export { InfoAlert, ErrorAlert, WarningAlert, OfflineAlert };

@@ -22,7 +22,7 @@ A serverless, progressive web application (PWA) with React using a test-driven d
 As a **user**
 I should be able to **"filter events by city"**
 So that **user can see the list of events that take place in that city**
-
+```
 - **Scenario 1:** When user hasn’t searched for a city, show upcoming events from all cities.
 
   - **Given** user hasn't searched for any city
@@ -40,13 +40,13 @@ So that **user can see the list of events that take place in that city**
   - **Given** the user was typing “Berlin” in the city textbox and the list of suggested cities is showing
   - **When** the user selects a city (e.g., “Berlin, Germany”) from the list
   - **Then** their city should be changed to that city (i.e., “Berlin, Germany”) and the user should receive a list of upcoming events in that city
-
+```
 ### FEATURE 2: SHOW/HIDE AN EVENT’S DETAILS
 
 As a **user**
 I should be able to **show/hide event details**
 So that **user can see more/less information about an event**
-
+```
 - **Scenario 1:** An event element is collapsed by default.
 
   - **Given** the user opens the app
@@ -64,13 +64,13 @@ So that **user can see more/less information about an event**
   - **Given** the users see a expanded event element with hide details button
   - **When** the user click on hide deatils button
   - **Then** the user should see the collaped event element with show details button
-
+```
 ### FEATURE 3: SPECIFY NUMBER OF EVENTS
 
 As a **user**
 I should be able to **specify the number of events**
 So that **user can see more or fewer events in the events list at once**
-
+```
 - **Scenario 1:** When user hasn’t specified a number, 32 is the default number.
 
   - **Given** the user did not specified a number of events being shown
@@ -82,13 +82,13 @@ So that **user can see more or fewer events in the events list at once**
   - **Given** the list of elements has been loaded and the user did not specify a number of events he wants to see
   - **When** the user enters a number (for example 6) in the number of events input field
   - **Then** the user should see a 6 in the input field and user should only see a 6 events in the page
-
+```
 ### FEATURE 4: USE THE APP WHEN OFFLINE
 
 As a **user**
 I should be able to **use the app when offline**
 So that **user can see the events viewed the last time user was online**
-
+```
 - **Scenario 1:** Show cached data when there’s no internet connection.
 
   - **Given** the app has no internet connection
@@ -100,19 +100,19 @@ So that **user can see the events viewed the last time user was online**
   - **Given** the app is offline the user open the settings
   - **When** the user changes the settings (city, time range)
   - **Then** the user should see a error
-
+```
 ### FEATURE 5: DATA VISUALIZATION
 
 As a **user**
 I should be able to **see a chart showing the upcoming events in each city**
 So that **user know what events are organized in which city**
-
+```
 - **Scenario 1:** Show a chart with the number of upcoming events in each city.
 
   - **Given** the user selects a city after typing city name in the input field from the main page
   - **When** the user selects the city
   - **Then** the suer should see a chart showing the upcoming events in each city
-
+```
 # Getting Started
 
 To get started with the meet App follow these steps.
